@@ -31,6 +31,7 @@ io.on('connection', function (socket) {
     if (channel === 'voteCast') {
       votes[socket.id] = message;
       io.sockets.emit('voteCount', countVotes(votes));
+      socket.emit('yourVote', message)
     }
   });
 
@@ -51,8 +52,8 @@ function countVotes(votes) {
   };
   for (var vote in votes) {
     voteCount[votes[vote]]++
-  }
+  };
   return voteCount;
-}
+};
 
 module.exports = server;

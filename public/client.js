@@ -18,6 +18,12 @@ socket.on('voteCount', function (votes) {
   console.log(votes);
 });
 
+socket.on('yourVote', function(vote){
+  var yourVote = document.getElementById('your-vote')
+  yourVote.innerText = vote
+  console.log(vote)
+});
+
 var buttons = document.querySelectorAll('#choices button');
 
 for (var i = 0; i < buttons.length; i++) {
