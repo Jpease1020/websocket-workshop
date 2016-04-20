@@ -14,7 +14,7 @@ socket.on('statusMessage', function (message) {
 
 socket.on('voteCount', function (votes) {
   var voteCount = document.getElementById('vote-count')
-  voteCount.innerText = votes["A"] + votes["B"]
+  voteCount.innerText = votes["A"] + votes["B"] + votes["C"] + votes["D"]
   console.log(votes);
 });
 
